@@ -2,6 +2,10 @@
 
 <ul>
   <% @campers.each do |camper| %>
-    <li><%= camper.name %></li>
+    <li><%= link_to camper.name, camper %></li>
   <% end %>
 </ul>
+<br>
+<%= form_tag new_camper_path, method: "Get" do %>
+  <%= submit_tag "Add a Camper" %>
+<% end%>

@@ -1,0 +1,10 @@
+<h1>Name: <%= @camper.name %></h1>
+<h2>Age: <%= @camper.age %></h2>
+<% @camper.signups.each do |signup|%>
+    <%=signup.activity.name%> at <%= signup.time %>
+    <br>
+<% end%>
+<br>
+<%= form_for @camper, {method: "Get", url: "/campers/#{@camper.id}/activity"} do |f| %>
+    <%= f.submit "Add an Activity for this Camper!" %>
+<% end%>

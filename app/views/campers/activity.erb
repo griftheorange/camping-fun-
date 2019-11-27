@@ -1,0 +1,12 @@
+<h1>New activity for <%= @camper.name %>!</h1>
+<h3>What activity would you like to add?</h3>
+<br>
+<%= form_for @signup do |f| %>
+    <%= f.collection_select :activity, @activities, :id, :name %>
+    <br>
+    <%= f.label :time%>
+    <%= f.number_field :time%>
+    <input type="hidden" name="camper_id" value=<%= @camper.id %>>
+    <br>
+    <%= f.submit "Add Activity" %>
+<% end%>
